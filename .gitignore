@@ -1,0 +1,13 @@
+# Archives & Backups
+*.zip
+*.tar.gz
+*.rar
+
+# Legacy downloaded HTML snapshots
+live_*.html
+live_assets/
+
+# OS and log files
+.DS_Store
+Thumbs.db
+*.log

@@ -41,102 +41,64 @@ include __DIR__ . '/includes/header.php';
             </div>
         <?php endif; ?>
 
-        <div class="layout-grid">
-            <!-- Left: Open Positions List -->
-            <div>
-                <span class="section-badge">Current Openings</span>
-                <h2 style="font-size: 2.1rem; color: var(--primary); margin-bottom: 12px;">Active Legal &amp; Consulting Vacancies</h2>
-                <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 34px;">
-                    We offer competitive compensation, continuous professional mentorship, and direct exposure to substantive intellectual property prosecution.
-                </p>
-
-                <div style="display:flex; flex-direction:column; gap:24px;">
-                    <?php if (empty($careers)): ?>
-                        <div style="padding: 30px; background: var(--white); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-                            <p style="margin: 0; color: var(--text-muted);">No current vacancies listed. You may still submit a general application using the form.</p>
-                        </div>
-                    <?php else: ?>
-                        <?php foreach ($careers as $job): ?>
-                            <div style="background: var(--white); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow-sm); transition: var(--transition);">
-                                <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
-                                    <div>
-                                        <h3 style="font-size: 1.35rem; color: var(--primary); margin-bottom: 6px;"><?= e($job['title']) ?></h3>
-                                        <div style="display:flex; gap:16px; font-size:0.86rem; color:var(--text-muted); flex-wrap:wrap;">
-                                            <span><i class="fa fa-briefcase text-gold"></i> <?= e($job['department']) ?></span>
-                                            <span><i class="fa fa-clock-o text-gold"></i> <?= e($job['job_type']) ?></span>
-                                            <span><i class="fa fa-graduation-cap text-gold"></i> <?= e($job['experience']) ?></span>
-                                            <span><i class="fa fa-map-marker text-gold"></i> <?= e($job['location']) ?></span>
-                                        </div>
-                                    </div>
-                                    <a href="#apply-now" class="btn btn-outline btn-sm select-job-btn" data-job="<?= e($job['title']) ?>" data-id="<?= e($job['id']) ?>">
-                                        Apply Online <i class="fa fa-arrow-down"></i>
-                                    </a>
-                                </div>
-                                <p style="color: #475569; font-size: 0.94rem; line-height: 1.6; margin-bottom: 12px;">
-                                    <?= e($job['description']) ?>
-                                </p>
-                                <div style="background: var(--bg-subtle); padding: 12px 16px; border-radius: var(--radius-sm); font-size: 0.88rem; color: var(--primary);">
-                                    <strong>Requirements:</strong> <?= e($job['requirements']) ?>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
-            </div>
-
-            <!-- Right: Application Form Card -->
-            <div class="form-card" id="apply-now" style="align-self: flex-start;">
+        <div style="max-width: 820px; margin: 0 auto;">
+            <!-- Application Form Card -->
+            <div class="form-card" id="apply-now">
                 <span class="section-badge">Join Our Team</span>
-                <h3 style="font-size: 1.45rem; color: var(--primary); margin-bottom: 6px;">Submit Job Application</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 22px;">
-                    Upload your CV and cover note for immediate review by our senior partners.
+                <h2 style="font-size: 1.85rem; color: var(--primary); margin-bottom: 8px;">Submit Job Application</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 26px;">
+                    Upload your CV and cover note for immediate review by our senior partners and recruitment team.
                 </p>
 
                 <form action="<?= BASE_URL ?>/process_application.php" method="POST" enctype="multipart/form-data">
                     <?= csrf_field() ?>
 
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="applied_position" style="display:block; font-size:0.82rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Target Position *</label>
+                    <div class="form-group" style="margin-bottom: 18px;">
+                        <label for="applied_position" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Target Position *</label>
                         <select id="applied_position" name="career_id" class="form-control" required>
-                            <option value="">Select Opening</option>
+                            <option value="0" selected>General Legal / Paralegal Application</option>
                             <?php foreach ($careers as $job): ?>
-                                <option value="<?= e($job['id']) ?>"><?= e($job['title']) ?></option>
+                                <option value="<?= e($job['id']) ?>"><?= e($job['title']) ?> (<?= e($job['department']) ?>)</option>
                             <?php endforeach; ?>
-                            <option value="0">General Legal / Paralegal Application</option>
                         </select>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="app_name" style="display:block; font-size:0.82rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Full Name *</label>
-                        <input type="text" id="app_name" name="name" class="form-control" placeholder="Your Full Name" required>
+                    <div class="form-row">
+                        <div class="form-group" style="margin-bottom: 18px;">
+                            <label for="app_name" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Full Name *</label>
+                            <input type="text" id="app_name" name="name" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 18px;">
+                            <label for="app_email" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Email Address *</label>
+                            <input type="email" id="app_email" name="email" class="form-control" placeholder="name@email.com" required>
+                        </div>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="app_email" style="display:block; font-size:0.82rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Email Address *</label>
-                        <input type="email" id="app_email" name="email" class="form-control" placeholder="name@email.com" required>
+                    <div class="form-row">
+                        <div class="form-group" style="margin-bottom: 18px;">
+                            <label for="app_phone" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Mobile / WhatsApp *</label>
+                            <input type="tel" id="app_phone" name="phone" class="form-control" placeholder="+91 9876543210" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 18px;">
+                            <label for="app_exp" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Years of Experience</label>
+                            <input type="text" id="app_exp" name="experience_years" class="form-control" placeholder="e.g. 3.5 Years">
+                        </div>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="app_phone" style="display:block; font-size:0.82rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Mobile / WhatsApp *</label>
-                        <input type="tel" id="app_phone" name="phone" class="form-control" placeholder="+91 9876543210" required>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="app_exp" style="display:block; font-size:0.82rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Years of Experience</label>
-                        <input type="text" id="app_exp" name="experience_years" class="form-control" placeholder="e.g. 3.5 Years">
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="resume_file" style="display:block; font-size:0.82rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Upload Resume (PDF, DOCX) *</label>
+                    <div class="form-group" style="margin-bottom: 18px;">
+                        <label for="resume_file" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Upload Resume (PDF, DOC, DOCX) *</label>
                         <input type="file" id="resume_file" name="resume" class="form-control" accept=".pdf,.doc,.docx" required>
+                        <small style="display:block; margin-top:5px; color:var(--text-muted); font-size:0.82rem;">Accepted formats: PDF, DOC, DOCX (Max size: 5MB).</small>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 22px;">
-                        <label for="cover_note" style="display:block; font-size:0.82rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Brief Cover Note</label>
-                        <textarea id="cover_note" name="cover_note" class="form-control" rows="3" placeholder="Tell us briefly about your legal education, IPR experience, or interest in Glow Well..."></textarea>
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label for="cover_note" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Brief Cover Note</label>
+                        <textarea id="cover_note" name="cover_note" class="form-control" rows="4" placeholder="Tell us briefly about your legal education, IPR experience, or interest in Glow Well Consultants..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
                         <i class="fa fa-send"></i> Submit Resume
                     </button>
                 </form>
@@ -144,20 +106,5 @@ include __DIR__ . '/includes/header.php';
         </div>
     </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const selectBtns = document.querySelectorAll('.select-job-btn');
-    const selectElem = document.getElementById('applied_position');
-    selectBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const jobId = btn.getAttribute('data-id');
-            if (selectElem && jobId) {
-                selectElem.value = jobId;
-            }
-        });
-    });
-});
-</script>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

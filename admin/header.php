@@ -159,9 +159,6 @@ $new_app_cnt = $pdo->query("SELECT COUNT(*) FROM job_applications WHERE status =
             <a href="<?= BASE_URL ?>/admin/careers.php" class="admin-menu-link <?= $active_tab === 'careers' ? 'active' : '' ?>">
                 <i class="fa fa-briefcase"></i> Careers
             </a>
-            <a href="<?= BASE_URL ?>/admin/downloads.php" class="admin-menu-link <?= $active_tab === 'downloads' ? 'active' : '' ?>">
-                <i class="fa fa-download"></i> Downloads
-            </a>
             <a href="<?= BASE_URL ?>/admin/news.php" class="admin-menu-link <?= in_array($active_tab, ['news', 'blog']) ? 'active' : '' ?>">
                 <i class="fa fa-pencil-square-o"></i> Blog &amp; Articles
             </a>

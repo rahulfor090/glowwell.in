@@ -56,11 +56,11 @@ $dbResumePath = 'uploads/resumes/' . $newFileName;
 
 // Find Job title if applicable
 $pdo = get_pdo();
-$jobTitle = "General Application";
+$jobTitle = "General Legal / Paralegal Application";
 if ($career_id > 0) {
     $stmtJ = $pdo->prepare("SELECT title FROM careers WHERE id = ?");
     $stmtJ->execute([$career_id]);
-    $jobTitle = $stmtJ->fetchColumn() ?: "General Application";
+    $jobTitle = $stmtJ->fetchColumn() ?: "General Legal / Paralegal Application";
 }
 
 try {

@@ -37,8 +37,8 @@ $settings = get_all_settings();
                     <?= e(get_setting('footer_about', 'Glow Well Consultants Pvt Ltd (GCPL) is a premier corporate management consultancy firm incorporated in 2011. Headquartered in Patna, Bihar, we specialize in Management System Certification (ISO), GS1 Barcode Registration, EPF & ESIC Social Security Compliances, and Brand Asset Facilitation (Trademark, Copyright & Designs).')) ?>
                 </p>
                 <div style="margin: 14px 0 18px; padding: 10px 14px; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm); font-size: 0.82rem; color: #cbd5e1; line-height: 1.6;">
-                    <div><strong>CIN:</strong> <?= e(get_setting('company_cin', '[U74140BR2011PTC017326 / Incorporation Records]')) ?></div>
-                    <div><strong>GSTIN:</strong> <?= e(get_setting('company_gstin', '[10AAACG....]')) ?></div>
+                    <div><strong>CIN:</strong> <?= e(get_setting('company_cin', 'U74140BR2011PTC017326')) ?></div>
+                    <!--<div><strong>GSTIN:</strong> <?= e(get_setting('company_gstin', '[10AAACG....]')) ?></div>-->
                 </div>
                 <div class="footer-socials">
                     <a href="https://wa.me/<?= e(get_setting('whatsapp_number', '917488961920')) ?>" target="_blank" class="social-link" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
@@ -57,7 +57,6 @@ $settings = get_all_settings();
                     <li><a href="<?= BASE_URL ?>/who.php"><i class="fa fa-angle-right"></i> Who We Are</a></li>
                     <li><a href="<?= BASE_URL ?>/services.php"><i class="fa fa-angle-right"></i> All Practice Areas</a></li>
                     <li><a href="<?= BASE_URL ?>/career.php"><i class="fa fa-angle-right"></i> Careers &amp; Jobs</a></li>
-                    <li><a href="<?= BASE_URL ?>/downloads.php"><i class="fa fa-angle-right"></i> Downloads &amp; Forms</a></li>
                     <li><a href="<?= BASE_URL ?>/blog.php"><i class="fa fa-angle-right"></i> Industry Blog &amp; Insights</a></li>
                     <li><a href="<?= BASE_URL ?>/contact.php"><i class="fa fa-angle-right"></i> Contact Patna Office</a></li>
                     <li><a href="<?= BASE_URL ?>/login.php"><i class="fa fa-angle-right"></i> Staff / Client Portal</a></li>
@@ -84,11 +83,9 @@ $settings = get_all_settings();
                     <li>
                         <i class="fa fa-map-marker"></i>
                         <span>
-                            <strong>Glow Well Consultants Pvt. Ltd. (GCPL)</strong><br>
-                            201, 2nd Floor, Mohini Market,<br>
-                            (SBI Exhibition Road Branch),<br>
-                            Opp Hotel Gargee Grand, Near HAI COMPLEX,<br>
-                            Exhibition Road, Patna - 800001, Bihar, India
+                            <strong>2nd Floor, Mohini Market</strong><br>
+                            Near SBI Exhibition Road Branch,<br>
+                            Opp. Hotel Gargee Grand, Exhibition Road, Patna - 800001, Bihar, India
                         </span>
                     </li>
                     <li>
@@ -126,7 +123,7 @@ $settings = get_all_settings();
         <!-- Google Maps Embed -->
         <div style="margin-top: 50px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: var(--shadow-lg);">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d115128.33215753247!2d85.07362666644445!3d25.61287751229096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x39ed59770d942f5d%3A0x3fe4b3ce4474f7b9!2sCopyright+Registration+in+Patna+-Glow+Well%2C+M%2FS+GLOW+WELL%2C+201%2C+2nd+Floor%2C+Mohini+Market%2C+Near+Hai+Complex+(SBI+ATM+Opp.+Hotel+Gargee+grand%2C+Exhibition+Rd%2C+Patna%2C+Bihar+800001!3m2!1d25.6128942!2d85.143667!5e0!3m2!1sen!2sin!4v1531109383735" 
+                src="<?= e(get_setting('map_embed', 'https://maps.google.com/maps?q=2nd+Floor,+Mohini+Market,+Near+SBI+Exhibition+Road+Branch,+Opp.+Hotel+Gargee+Grand,+Exhibition+Road,+Patna+-+800001,+Bihar,+India&t=&z=16&ie=UTF8&iwloc=&output=embed')) ?>" 
                 width="100%" 
                 height="320" 
                 style="border:0; display:block;" 

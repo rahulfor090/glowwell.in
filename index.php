@@ -12,9 +12,6 @@ $practices = $pdo->query("SELECT * FROM practices WHERE status = 'published' ORD
 // Fetch testimonials
 $testimonials = $pdo->query("SELECT * FROM testimonials WHERE status = 'published' ORDER BY sort_order ASC LIMIT 3")->fetchAll();
 
-// Fetch featured news
-$insights = $pdo->query("SELECT * FROM news WHERE status = 'published' ORDER BY id DESC LIMIT 3")->fetchAll();
-
 include __DIR__ . '/includes/header.php';
 ?>
 
@@ -46,7 +43,7 @@ include __DIR__ . '/includes/header.php';
                     <i class="fa fa-shield"></i> <?= e(get_setting('hero_badge', '13+ Years of Management Consultancy & Regulatory Excellence (Est. 2011)')) ?>
                 </div>
                 <h1 class="hero-title">
-                    <?= get_setting('hero_title', 'Empowering Business Growth. <br><span class="text-gold">Regulatory Compliance & ISO Systems.</span> <br>Brand Asset Facilitation.') ?>
+                    <?= get_setting('hero_title', 'Empowering Business Growth. <br><span class="text-gold">Regulatory Compliance & Management System Implementation.</span> <br>Brand Asset Facilitation.') ?>
                 </h1>
                 <p class="hero-desc">
                     <?= e(get_setting('hero_desc', 'Glow Well Consultants Pvt Ltd (GCPL) is Eastern India\'s premier corporate management and regulatory consultancy firm. Incorporated in 2011, we guide startups, MSMEs, and established enterprises across ISO Management Systems, Barcode Registration, EPF & ESIC Social Security, and Brand Asset Facilitation.')) ?>
@@ -212,7 +209,7 @@ include __DIR__ . '/includes/header.php';
         <div class="why-grid">
             <!-- Left: Visual Card -->
             <div class="why-image-card">
-                <img src="<?= BASE_URL ?>/assets/images/11_1.png" alt="Glow Well Management Consulting" onerror="this.onerror=null; this.src='<?= BASE_URL ?>/assets/images/world_trans.png';">
+                <img src="<?= BASE_URL ?>/assets/images/why_consultancy.jpg" alt="Glow Well Corporate Management Consultancy" onerror="this.onerror=null; this.src='<?= BASE_URL ?>/assets/images/world_trans.png';">
                 <div class="why-floating-badge">
                     <h4><?= e(get_setting('why_float_title', 'Trusted Since 2011')) ?></h4>
                     <p><?= e(get_setting('why_float_desc', 'Over 13 years of excellence in business management consultancy and regulatory compliance in Patna, Bihar.')) ?></p>
@@ -298,55 +295,5 @@ include __DIR__ . '/includes/header.php';
     </div>
 </section>
 <?php endif; ?>
-
-<!-- Latest Legal Insights & Blog Section -->
-<section class="section section-bg">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-badge"><?= e(get_setting('news_section_badge', 'From Our Legal Blog')) ?></span>
-            <h2 class="section-title"><?= e(get_setting('news_section_title', 'Latest Legal Blog & Industry Insights')) ?></h2>
-            <p class="section-desc"><?= e(get_setting('news_section_desc', 'Stay ahead of legal regulatory shifts, landmark IP judgments, patent trends, and compliance best practices.')) ?></p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-            <?php foreach ($insights as $item): ?>
-                <div style="background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border-color); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-                    <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                            <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent-hover); text-transform: uppercase; letter-spacing: 0.05em; background: var(--bg-subtle); padding: 3px 8px; border-radius: 4px;">
-                                <?= e($item['category']) ?>
-                            </span>
-                            <span style="font-size: 0.78rem; color: var(--text-muted);">
-                                <i class="fa fa-clock-o"></i> <?= e($item['read_time']) ?>
-                            </span>
-                        </div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 12px; line-height: 1.35;">
-                            <a href="<?= BASE_URL ?>/blog-single.php?slug=<?= e($item['slug']) ?>" style="color: var(--primary);">
-                                <?= e($item['title']) ?>
-                            </a>
-                        </h3>
-                        <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                            <?= e($item['excerpt']) ?>
-                        </p>
-                        <div style="border-top: 1px solid var(--border-color); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.8rem; color: var(--text-muted);">
-                                By <?= e($item['author_name'] ?? 'Legal Advisory') ?>
-                            </span>
-                            <a href="<?= BASE_URL ?>/blog-single.php?slug=<?= e($item['slug']) ?>" style="font-weight: 700; font-size: 0.88rem; color: var(--primary); display: inline-flex; align-items: center; gap: 5px;">
-                                Read Post <i class="fa fa-arrow-right text-gold"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-
-        <div style="text-align: center; margin-top: 45px;">
-            <a href="<?= BASE_URL ?>/blog.php" class="btn btn-navy btn-lg">
-                <i class="fa fa-newspaper-o"></i> Explore All Blog Articles &amp; Insights <i class="fa fa-arrow-right"></i>
-            </a>
-        </div>
-    </div>
-</section>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
 $page_title = "Contact Us | Glow Well Consultants Pvt. Ltd. | Exhibition Road, Patna";
-$meta_desc = "Get in touch with Glow Well Consultants Pvt. Ltd. in Patna, Bihar. Office address: 201 Mohini Market, Exhibition Road. Landline: +91 612 2999299, Mobile / WhatsApp: +91 7488961920 / 21.";
+$meta_desc = "Get in touch with Glow Well Consultants Pvt. Ltd. in Patna, Bihar. Office address: 2nd Floor, Mohini Market, Near SBI Exhibition Road Branch, Opp. Hotel Gargee Grand, Exhibition Road, Patna - 800001, Bihar, India. Landline: +91 612 2999299, Mobile / WhatsApp: +91 7488961920 / 21.";
 require_once __DIR__ . '/config/settings.php';
 include __DIR__ . '/includes/header.php';
 ?>
@@ -32,10 +32,10 @@ include __DIR__ . '/includes/header.php';
                 </div>
                 <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 8px;">Patna Head Office</h3>
                 <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6; margin: 0;">
-                    201, 2nd Floor, Mohini Market,<br>
-                    (SBI Exhibition Road Branch),<br>
-                    Opp Hotel Gargee Grand, Near HAI COMPLEX,<br>
-                    Exhibition Road, Patna - 800001, Bihar, India
+                    2nd Floor, Mohini Market,<br>
+                    Near SBI Exhibition Road Branch,<br>
+                    Opp. Hotel Gargee Grand, Exhibition Road,<br>
+                    Patna - 800001, Bihar, India
                 </p>
             </div>
 
@@ -45,7 +45,7 @@ include __DIR__ . '/includes/header.php';
                 </div>
                 <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 8px;">Direct Telephone Lines</h3>
                 <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6; margin: 0;">
-                    <strong>Landline:</strong> <?= e(get_setting('contact_landline', '+91 612 2999299')) ?><br>
+                    <strong>Landline:</strong> <?= e(get_setting('contact_landline', '+91 7488961920')) ?><br>
                     <strong>WhatsApp / Mobile:</strong><br>
                     <a href="tel:+917488961920" style="color: var(--primary); font-weight: 600;">+91 7488961920</a> &amp; 
                     <a href="tel:+917488961921" style="color: var(--primary); font-weight: 600;">21</a><br>
@@ -63,7 +63,7 @@ include __DIR__ . '/includes/header.php';
                 <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6; margin: 0;">
                     <strong>Email:</strong> <a href="mailto:<?= e(get_setting('contact_email', 'info@glowwell.in')) ?>" style="color: var(--primary); font-weight: 600;"><?= e(get_setting('contact_email', 'info@glowwell.in')) ?></a><br>
                     <span style="display:inline-block; margin-top:8px; font-size:0.85rem; color:var(--accent-hover);">
-                        <i class="fa fa-clock-o"></i> Mon–Sat: 10:00 AM – 7:00 PM
+                        <i class="fa fa-clock-o"></i> Mon–Sat: 10:30 AM – 6:30 PM
                     </span>
                 </p>
             </div>
@@ -137,11 +137,11 @@ include __DIR__ . '/includes/header.php';
                 <div style="background: var(--white); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); height: 100%; display: flex; flex-direction: column;">
                     <div style="padding: 24px; border-bottom: 1px solid var(--border-color);">
                         <h3 style="font-size: 1.35rem; color: var(--primary); margin-bottom: 4px;">Interactive Location Map</h3>
-                        <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Located at Mohini Market, opposite Hotel Gargee Grand, Exhibition Road, Patna.</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">2nd Floor, Mohini Market, Near SBI Exhibition Road Branch, Opp. Hotel Gargee Grand, Exhibition Road, Patna - 800001, Bihar, India</p>
                     </div>
                     <div style="flex-grow: 1; min-height: 380px;">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d115128.33215753247!2d85.07362666644445!3d25.61287751229096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x39ed59770d942f5d%3A0x3fe4b3ce4474f7b9!2sCopyright+Registration+in+Patna+-Glow+Well%2C+M%2FS+GLOW+WELL%2C+201%2C+2nd+Floor%2C+Mohini+Market%2C+Near+Hai+Complex+(SBI+ATM+Opp.+Hotel+Gargee+grand%2C+Exhibition+Rd%2C+Patna%2C+Bihar+800001!3m2!1d25.6128942!2d85.143667!5e0!3m2!1sen!2sin!4v1531109383735" 
+                            src="<?= e(get_setting('map_embed', 'https://maps.google.com/maps?q=2nd+Floor,+Mohini+Market,+Near+SBI+Exhibition+Road+Branch,+Opp.+Hotel+Gargee+Grand,+Exhibition+Road,+Patna+-+800001,+Bihar,+India&t=&z=16&ie=UTF8&iwloc=&output=embed')) ?>" 
                             width="100%" 
                             height="100%" 
                             style="border:0; min-height: 380px;" 

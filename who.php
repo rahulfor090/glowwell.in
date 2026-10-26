@@ -75,7 +75,7 @@ include __DIR__ . '/includes/header.php';
                                     Late Shri Ashok Kumar
                                 </h3>
                                 <div style="font-size: 0.92rem; color: var(--accent-hover); font-weight: 700;">
-                                    Master of Science (Physics) &bull; 1974 &ndash; 2021
+                                    Master of Science (Physics) &bull; 1969 &ndash; 2021
                                 </div>
                             </div>
                             <div style="color: #64748b; font-size: 0.88rem; font-style: italic; background: rgba(255,255,255,0.7); padding: 6px 12px; border-radius: 4px; border: 1px solid #e2e8f0;">
@@ -83,7 +83,7 @@ include __DIR__ . '/includes/header.php';
                             </div>
                         </div>
                         <p style="color: #334155; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
-                            A visionary mentor gifted with profound scientific acumen and analytical precision, Late Shri Ashok Kumar was the founding pillar of Glow Well Consultants Pvt Ltd in 2011. As elder brother and co-founder, his moral clarity, methodical thinking, and unwavering dedication to institutional excellence laid the foundational ethos of GCPL. Tragically, he was called to heavenly abode during the COVID-19 pandemic on <strong>27th May 2021</strong>. His founding principles of uncompromising integrity, intellectual rigor, and compassionate guidance remain the permanent lodestar guiding every operation of our company.
+                            A visionary mentor gifted with profound scientific acumen and analytical precision, Late Shri Ashok Kumar was the founding pillar of Glow Well Consultants Pvt Ltd in 2011. As elder brother and guardian, his moral clarity, methodical thinking, and unwavering dedication to institutional excellence laid the foundational ethos of GCPL. Tragically, he was called to heavenly abode during the COVID-19 pandemic in May 2021. His founding principles of uncompromising integrity, intellectual rigor, and compassionate guidance remain the permanent lodestar guiding every operation of our company.
                         </p>
                     </div>
 
@@ -99,7 +99,7 @@ include __DIR__ . '/includes/header.php';
                                 MBA (HR + Marketing)
                             </div>
                             <p style="font-size: 0.92rem; color: #475569; line-height: 1.65; margin-bottom: 0;">
-                                Steering GCPL since its incorporation in 2011, Mrs. Amrita brings extensive strategic management expertise in organizational behavior, human resources, and client relations. She directs executive management, stakeholder communications, and compliance service delivery across all corporate domains.
+                                Steering GCPL since its incorporation in 2011, Mrs. Amrita brings extensive strategic management expertise in organizational behaviour, human resources, intellectual property and client relations. She directs executive management, stakeholder communications, and compliance service delivery across all corporate domains.
                             </p>
                         </div>
 
@@ -199,16 +199,16 @@ include __DIR__ . '/includes/header.php';
                      ============================================================ -->
                 <div style="margin-top: 35px; padding: 22px 24px; background: #fffbeb; border: 1px solid #fef3c7; border-left: 4px solid #d97706; border-radius: var(--radius-md); font-size: 0.88rem; color: #78350f; line-height: 1.7;">
                     <strong style="display: block; font-size: 0.92rem; color: #92400e; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">
-                        <i class="fa fa-info-circle"></i> Statutory Regulatory Notice &amp; Bar Council Compliance Statement
+                        <i class="fa fa-info-circle"></i> Statutory Regulatory Notice &amp; Disclaimer
                     </strong>
                     <p style="margin-bottom: 8px;">
-                        <strong>Glow Well Consultants Pvt Ltd (GCPL)</strong> is an independent corporate management consultancy company incorporated in 2011 under the Companies Act (CIN: [U74140BR2011PTC017326 / Under ROC Records]).
+                        <strong>Glow Well Consultants Pvt Ltd (GCPL)</strong> is an independent corporate management consultancy service provider company incorporated in 2011 under the Companies Act (CIN: [U74140BR2011PTC017326).
                     </p>
                     <p style="margin-bottom: 8px;">
-                        In strict adherence to Rule 36 of the Bar Council of India (BCI) Rules and Section 35 of the Advocates Act, 1961, <strong>GCPL is not a law firm</strong> and does not practice law, engage in litigation advocacy, or solicit legal work. All intellectual property services offered by GCPL are strictly confined to procedural facilitation, brand clearance search assistance, document preparation, and commercial monetization guidance. Any contentious dispute representation, hearings before statutory tribunals, or courtroom litigation are referred to or handled exclusively by clients' own independent legal counsel.
+                        GCPL is not a law firm and does not practice law, engage in litigation advocacy, or solicit legal work. All intellectual property services offered by GCPL are strictly confined to procedural facilitation, and  assistance, document preparation, and commercial monetization guidance. Any contentious dispute representation, hearings before statutory tribunals, or courtroom litigation are referred to or handled exclusively by clients' own independent legal counsel.
                     </p>
                     <p style="margin-bottom: 0;">
-                        Management System certifications (ISO 9001, 14001, 22000, 45001) are awarded solely by accredited third-party Certification Bodies; GCPL provides professional consultancy, documentation, and implementation support to prepare organizations for audit readiness.
+                        Management System certifications (ISO 9001, 14001, 22000, 45001, etc) are awarded solely by accredited third-party Certification Bodies; GCPL provides professional consultancy, documentation, and implementation support to prepare organizations for audit readiness.
                     </p>
                 </div>
 
@@ -272,8 +272,8 @@ include __DIR__ . '/includes/header.php';
                         <strong>Year of Inc.:</strong> 2011<br>
                         <strong>Headquarters:</strong> Patna, Bihar, India
                     </p>
-                    <a href="<?= BASE_URL ?>/downloads.php" style="font-size: 0.88rem; font-weight: 700; color: var(--accent-hover);">
-                        <i class="fa fa-download"></i> View Compliance Resources &rarr;
+                    <a href="<?= BASE_URL ?>/services.php" style="font-size: 0.88rem; font-weight: 700; color: var(--accent-hover);">
+                        <i class="fa fa-briefcase"></i> Explore Compliance Services &rarr;
                     </a>
                 </div>
             </aside>

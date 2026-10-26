@@ -50,7 +50,8 @@ function get_all_settings() {
                 'whatsapp_number' => '917488961920',
                 'contact_email' => 'info@glowwell.in',
                 'contact_email_enquiry' => 'info@glowwell.in',
-                'contact_address' => '201, 2nd Floor, Mohini Market, Opp Hotel Gargee Grand, Exhibition Road, Patna - 800001, Bihar, India'
+                'contact_address' => '2nd Floor, Mohini Market, Near SBI Exhibition Road Branch, Opp. Hotel Gargee Grand, Exhibition Road, Patna - 800001, Bihar, India',
+                'map_embed' => 'https://maps.google.com/maps?q=2nd+Floor,+Mohini+Market,+Near+SBI+Exhibition+Road+Branch,+Opp.+Hotel+Gargee+Grand,+Exhibition+Road,+Patna+-+800001,+Bihar,+India&t=&z=16&ie=UTF8&iwloc=&output=embed'
             ];
         }
     }

@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Please provide both username and password.";
         } else {
             $pdo = get_pdo();
-            $stmt = $pdo->prepare("SELECT * FROM admins WHERE username = ?");
-            $stmt->execute([$username]);
+            $stmt = $pdo->prepare("SELECT * FROM admins WHERE username = ? OR email = ?");
+            $stmt->execute([$username, $username]);
             $admin = $stmt->fetch();
 
             if ($admin && password_verify($password, $admin['password_hash'])) {
@@ -54,8 +54,8 @@ include __DIR__ . '/includes/header.php';
                 <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--navy-grad); color: var(--accent-light); display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 12px;">
                     <i class="fa fa-lock"></i>
                 </div>
-                <h2 style="font-size: 1.6rem; color: var(--primary);">Secure Staff Login</h2>
-                <p style="color: var(--text-muted); font-size: 0.88rem;">Default credential: <code>admin</code> / <code>admin123</code></p>
+                <h2 style="font-size: 1.6rem; color: var(--primary);">Secure Team Login</h2>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">Authorized access for administrative staff and consultants.</p>
             </div>
 
             <?php if (!empty($error)): ?>
@@ -68,9 +68,9 @@ include __DIR__ . '/includes/header.php';
                 <?= csrf_field() ?>
 
                 <div class="form-group" style="margin-bottom: 18px;">
-                    <label for="login_user" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Username</label>
+                    <label for="login_user" style="display:block; font-size:0.84rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Username or Email</label>
                     <div style="position: relative;">
-                        <input type="text" id="login_user" name="username" class="form-control" placeholder="Enter username (e.g. admin)" required autofocus>
+                        <input type="text" id="login_user" name="username" class="form-control" placeholder="Enter your username or email" required autofocus>
                     </div>
                 </div>
 

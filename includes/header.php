@@ -44,7 +44,7 @@ $practices_list = get_active_practices();
             </div>
             <div class="top-right">
                 <a href="<?= BASE_URL ?>/login.php" class="top-portal-link">
-                    <i class="fa fa-lock"></i> Staff Login
+                    <i class="fa fa-lock"></i> Team Login
                 </a>
             </div>
         </div>
@@ -84,9 +84,6 @@ $practices_list = get_active_practices();
                     </li>
                     <li class="nav-item <?= is_active('career.php') ?>">
                         <a href="<?= BASE_URL ?>/career.php" class="nav-link">Career</a>
-                    </li>
-                    <li class="nav-item <?= is_active('downloads.php') ?>">
-                        <a href="<?= BASE_URL ?>/downloads.php" class="nav-link">Downloads</a>
                     </li>
                     <li class="nav-item <?= (is_active('blog.php') || is_active('blog-single.php') || is_active('news.php') || is_active('news-single.php')) ? 'active' : '' ?>">
                         <a href="<?= BASE_URL ?>/blog.php" class="nav-link">Blog</a>
